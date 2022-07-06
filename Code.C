@@ -267,6 +267,37 @@ VOID RELAY_1_OFF()
       RELAY_1=1;
       XUAT_BUZZER_RELAY();         
 }
+VOID RELAY_2_OFF()
+{    
+      RELAY_2=1;
+      XUAT_BUZZER_RELAY();         
+}
+VOID RELAY_3_OFF()
+{    
+      RELAY_3=1;
+      XUAT_BUZZER_RELAY();         
+}
+VOID RELAY_4_OFF()
+{    
+      RELAY_1=1;
+      XUAT_BUZZER_RELAY();         
+}
+VOID RELAY_5_OFF()
+{    
+      RELAY_1=1;
+      XUAT_BUZZER_RELAY();         
+}
+VOID RELAY_6_OFF()
+{    
+      RELAY_1=1;
+      XUAT_BUZZER_RELAY();         
+}
+VOID RELAY_7_OFF()
+{    
+      RELAY_1=1;
+      XUAT_BUZZER_RELAY();         
+}
+
 unsigned int1 ss0, ss1, ss2, ss3, ss4, ss5, ss6, ss7, ss8, ss9;
 void matran_phim()                              // MA TRAN PHIM
 {
@@ -350,6 +381,40 @@ mp=key_4x4_dw();
         
          RELAY_3_OFF();
       }
+      if(ss4==1)
+      {
+         RELAY_4_ON();
+      }
+   else
+      {
+         RELAY_4_OFF();
+      }
+   if(ss5==1)
+      {
+         RELAY_5_ON();
+      }
+   else
+      {
+         RELAY_5_OFF();
+      }
+   if(ss6==1)
+      {
+         RELAY_6_ON();
+      }
+   else
+      {
+        
+         RELAY_6_OFF();
+      }
+   if(ss7==1)
+      {
+         RELAY_7_ON();
+      }
+   else
+      {
+        
+         RELAY_7_OFF();
+      }
  }
 }
 VOID MAIN()
@@ -379,3 +444,4 @@ VOID MAIN()
       }
    }
 }
+
