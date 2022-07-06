@@ -275,13 +275,11 @@ mp=key_4x4_dw();
  {
    if(mp==0)
    {
-      RELAY_0_ON();
-      
+      ss0 = !ss0;      
    }
    else if(mp==1)   
    {
-      ss1 = !ss1; 
-      RELAY_0_OFF();
+      ss1 = !ss1;       
    }
    else if(mp == 2)
    {
@@ -319,6 +317,39 @@ mp=key_4x4_dw();
    {
       ss9 = !ss9;
    }
+   if(ss0==1)
+      {
+         RELAY_0_ON();
+      }
+   else
+      {
+         RELAY_0_OFF();
+      }
+   if(ss1==1)
+      {
+         RELAY_1_ON();
+      }
+   else
+      {
+         RELAY_1_OFF();
+      }
+   if(ss2==1)
+      {
+         RELAY_2_ON();
+      }
+   else
+      {
+         RELAY_2_OFF();
+      }
+   if(ss3==1)
+      {
+         RELAY_3_ON();
+      }
+   else
+      {
+        
+         RELAY_3_OFF();
+      }
  }
 }
 VOID MAIN()
@@ -326,7 +357,7 @@ VOID MAIN()
        
       PORT_B_PULLUPS(0x0F);
       SET_TRIS_D(0X00);
-      setup_timer_0(t0_internal | t0_div_256);//1s tran
+      setup_timer_0(t0_internal | t0_div_256);
       set_timer0(61);
       enable_interrupts(int_timer1);
       setup_timer_1(t1_internal|t1_div_by_8);
@@ -338,24 +369,8 @@ VOID MAIN()
    {
       gm_ht_led_7dq();                  
       matran_phim();
-      dong_ho();
+      dong_ho();      
       
-//!      if(ss0==1)
-//!      {
-//!         //RELAY_0_ON();
-//!      }
-//!      else
-//!      {
-//!         ///RELAY_0_OFF();
-//!      }
-//!       if(ss1==1)
-//!      {
-//!         RELAY_1_ON();
-//!      }
-//!      else
-//!      {
-//!        // RELAY_1_OFF();
-//!      }
       if (tmr0if==1)
       {
         tmr0if=0;
