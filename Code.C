@@ -297,7 +297,7 @@ VOID RELAY_7_OFF()
       RELAY_1=1;
       XUAT_BUZZER_RELAY();         
 }
-
+//cho nay thay doi
 unsigned int1 ss0, ss1, ss2, ss3, ss4, ss5, ss6, ss7, ss8, ss9;
 void matran_phim()                              // MA TRAN PHIM
 {
