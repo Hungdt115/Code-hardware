@@ -18,9 +18,9 @@
 #DEFINE      MO_8_LED_QUET        G_8LEDQUET=0;  //OUTPUT_LOW(G_8LEDQUET)
 #DEFINE      TAT_8_LED_QUET       G_8LEDQUET=1;  //OUTPUT_LOW(G_8LEDQUET)
 
-unsigned int1 BAT_RELAY;
+
 unsigned int8 bdn;
-unsigned int8 gio, phut, giay,mp,s;
+unsigned int8 gio, phut, giay,mp;
 
 
 VOID XUAT_1BYTE(UNSIGNED INT8 BYTEXUAT)                  //XUAT 1 BYTE
@@ -264,40 +264,40 @@ VOID RELAY_0_OFF()
 }
 VOID RELAY_1_OFF()
 {    
-      RELAY_1=1;
+      RELAY_1=0;
       XUAT_BUZZER_RELAY();         
 }
 VOID RELAY_2_OFF()
 {    
-      RELAY_2=1;
+      RELAY_2=0;
       XUAT_BUZZER_RELAY();         
 }
 VOID RELAY_3_OFF()
 {    
-      RELAY_3=1;
+      RELAY_3=0;
       XUAT_BUZZER_RELAY();         
 }
 VOID RELAY_4_OFF()
 {    
-      RELAY_1=1;
+      RELAY_1=0;
       XUAT_BUZZER_RELAY();         
 }
 VOID RELAY_5_OFF()
 {    
-      RELAY_1=1;
+      RELAY_1=0;
       XUAT_BUZZER_RELAY();         
 }
 VOID RELAY_6_OFF()
 {    
-      RELAY_1=1;
+      RELAY_1=0;
       XUAT_BUZZER_RELAY();         
 }
 VOID RELAY_7_OFF()
 {    
-      RELAY_1=1;
+      RELAY_1=0;
       XUAT_BUZZER_RELAY();         
 }
-//cho nay thay doi
+
 unsigned int1 ss0, ss1, ss2, ss3, ss4, ss5, ss6, ss7, ss8, ss9;
 void matran_phim()                              // MA TRAN PHIM
 {
@@ -350,19 +350,20 @@ mp=key_4x4_dw();
    }
    if(ss0==1)
       {
-         RELAY_0_ON();
+         RELAY_0_ON();         
       }
    else
       {
-         RELAY_0_OFF();
+         RELAY_0_OFF();         
       }
    if(ss1==1)
       {
-         RELAY_1_ON();
+         
+         RELAY_1_OFF();
       }
    else
       {
-         RELAY_1_OFF();
+         RELAY_1_ON();
       }
    if(ss2==1)
       {
@@ -444,4 +445,3 @@ VOID MAIN()
       }
    }
 }
-
